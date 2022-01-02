@@ -1,0 +1,5 @@
+Let me find Palindrome in the following 
+words.
+Father is dad and mother is mom. 
+Brother is male and sister is female.
+All of us like kayak and pop song.
