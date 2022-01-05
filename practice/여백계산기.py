@@ -4,6 +4,3 @@ print("너비 여백:")
 for i in range(r):
     if (t - i * mn) % n == 0:
         print((t - i * mn) // n, i)
-
-
-# pyqt5 또는 tkinter로 구현할 것
