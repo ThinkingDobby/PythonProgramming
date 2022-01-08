@@ -1,3 +1,5 @@
+# DFS - Stack
+
 n, m = map(int, input().split())
 data = [list(map(int, input())) for _ in range(n)]
 
