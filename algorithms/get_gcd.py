@@ -9,3 +9,4 @@ def gcd(a, b):
 
 # LCM(최소공배수) = a * b / gcd
 
+# 시간 복잡도: O(logN)

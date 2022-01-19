@@ -9,9 +9,9 @@ def quick_sort(array, start, end):
     right = end
 
     while left <= right:
-        while left <= end and array[left] <= array[pivot]:  # left가 end를 넘어가면 right - pivot 교체
+        while left <= end and array[left] < array[pivot]:
             left += 1
-        while right > start and array[right] >= array[pivot]:   # right가 0이 되면 자신과 교체
+        while right > start and array[right] > array[pivot]:
             right -= 1
         if left > right:
             array[right], array[pivot] = array[pivot], array[right]
