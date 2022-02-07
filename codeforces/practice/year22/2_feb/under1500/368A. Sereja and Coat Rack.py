@@ -1,0 +1,5 @@
+n, d = map(int, input().split())
+data = sorted(map(int, input().split()))
+m = int(input())
+ans = sum(data[:min(m, n)])
+print(ans + min(0, n - m) * d)
