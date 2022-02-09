@@ -42,5 +42,11 @@ def upper_bound(data, target, _l, _r):
 
 ex = [1, 1, 1, 2, 2, 2, 3, 4, 4, 4]
 print(binary_search(ex, 2, 0, len(ex) - 1))
+
 print(lower_bound(ex, 2, 0, len(ex) - 1))
 print(upper_bound(ex, 2, 0, len(ex) - 1))
+
+# bisect 라이브러리 이용 가능
+import bisect
+print(bisect.bisect_left(ex, 2))
+print(bisect.bisect_right(ex, 2))
