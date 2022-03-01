@@ -40,7 +40,7 @@ def upper_bound(data, target, _l, _r):
     return r
 
 
-ex = [1, 1, 1, 2, 2, 2, 3, 4, 4, 4]
+ex = [1, 1, 1, 2, 2, 2, 3, 4, 4, 4, 6, 8]
 print(binary_search(ex, 2, 0, len(ex) - 1))
 
 print(lower_bound(ex, 2, 0, len(ex) - 1))
@@ -50,3 +50,5 @@ print(upper_bound(ex, 2, 0, len(ex) - 1))
 import bisect
 print(bisect.bisect_left(ex, 2))
 print(bisect.bisect_right(ex, 2))
+
+# 리스트 내에 찾는 값 없으면 그 값보다 큰 첫번째 요소 인덱스 반환 - 공통 특징
