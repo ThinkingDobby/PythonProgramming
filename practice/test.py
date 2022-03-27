@@ -1,3 +1,11 @@
-a = [1, 3, 2, 3, 4]
-print(a.index(3))
-print(len(a) - a[::-1].index(3))
+n = int(input())
+cnt = 0
+
+for i in range(1, n + 1):
+    for j in range(1, n - i + 1):
+        cnt += 1
+        for k in range(1, i + 1):
+            cnt += 1
+        cnt += 1
+
+print(cnt)
