@@ -3,6 +3,7 @@ import math
 a = 3
 b = 2
 cnt = math.comb(a, b)
+# PyPy 3.6.9(Codeforces 기준)에서 사용 시 RTE 발생
 print(cnt)
 # 조합 개수 계산
 # a개에서 b개를 뽑아 순서를 고려하지 않고 나열하는 경우의 수
