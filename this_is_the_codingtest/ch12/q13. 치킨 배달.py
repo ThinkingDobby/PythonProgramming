@@ -1,5 +1,4 @@
-# WA
-
+import itertools
 import math
 import sys
 
@@ -18,22 +17,26 @@ for i in range(n):
         elif data[i][j] == 2:
             chicks.append([i, j])
 
-memo = [[i, 0] for i in range(len(chicks))]
-for i in range(len(chicks)):
-    for j in homes:
-        memo[i][1] += abs(chicks[i][0] - j[0]) + abs(chicks[i][1] - j[1])
-
-lim = list(map(lambda x: x[0], sorted(memo, key=lambda x: x[1])[:m]))
-
-cnt = 0
+chick_for_each_homes = []
 for i in homes:
-    mv = math.inf
-    for j in lim:
-        tmp = abs(chicks[j][0] - i[0]) + abs(chicks[j][1] - i[1])
-        mv = min(mv, tmp)
-    cnt += mv
+    tmp = []
+    for j in range(len(chicks)):
+        tmp.append([j, abs(i[0] - chicks[j][0]) + abs(i[1] - chicks[j][1])])
+    chick_for_each_homes.append(sorted(tmp, key=lambda x: x[1]))
+# print(chick_for_each_homes)
 
-print(memo)
-print(lim)
+tmp = list(range(len(chicks)))
+ans = list(itertools.combinations(tmp, m))
 
-print(cnt)
+mv = math.inf
+for i in ans:
+    memo = [True if j in i else False for j in range(len(chicks))]
+    s = 0
+    for j in chick_for_each_homes:
+        for k in j:
+            if memo[k[0]]:
+                s += k[1]
+                break
+    mv = min(mv, s)
+
+print(mv)
