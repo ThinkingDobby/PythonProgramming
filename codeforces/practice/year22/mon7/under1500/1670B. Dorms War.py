@@ -1,5 +1,3 @@
-# 미완성
-
 import sys
 
 input = sys.stdin.readline
@@ -9,12 +7,12 @@ for _ in range(int(input())):
     data = input().rstrip()
     tmp = set(input().split()[1:])
 
+    memo = []
     cnt = 0
-    mv = 0
+    prev = 0
     for i in range(n):
         if data[i] in tmp:
-            mv = cnt
-            cnt = 0
-        cnt += 1
+            memo.append(i - prev)
+            prev = i
 
-    print(mv)
+    print(max(memo) if memo else 0)

@@ -1,4 +1,5 @@
 # WA
+# Edge Coloring 문제 - 보류
 
 import sys
 
