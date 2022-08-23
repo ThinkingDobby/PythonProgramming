@@ -23,20 +23,3 @@ for _ in range(int(input())):
         print(*memo)
     else:
         print(-1)
-
-
-
-    # value = s // n
-    # rest = s % n
-    # svalue = value // k
-    # srest = value % k
-    #
-    # base = svalue * n
-    # trest = rest + srest * n
-    # # base = svalue * (n - rest) + (1 + value) // k * rest
-    # # trest = srest * (n - rest) + (1 + value) % k * rest
-    # if base <= b <= base + trest // k:
-    #     cnt = b - base
-    #     print(cnt, base, trest)
-    # else:
-    #     print(-1)
