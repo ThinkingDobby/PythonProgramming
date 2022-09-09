@@ -1,5 +1,5 @@
 from basic_test_server import BasicTestServer
-from practice.basic_wav_receiving_protocol import BasicWAVReceivingProtocol
+from practice.server_test.basic_wav_receiving_protocol import BasicWAVReceivingProtocol
 
 
 class FileTransferTestServer(BasicTestServer):
