@@ -2,14 +2,8 @@ import sys
 
 input = sys.stdin.readline
 
-vows = ['a', 'e', 'i', 'o', 'u']
+for _ in range(int(input())):
+    n = int(input())
+    data = set(map(int, input().split()))
 
-data = input().rstrip()
-ans = data[-1] in vows or data[-1] == 'n'
-for i in range(len(data) - 1):
-    if data[i] not in vows and data[i + 1] not in vows:
-        if data[i] == 'n':
-            continue
-        ans = False
-
-print("YES" if ans else "NO")
+    print(n if len(data) != 2 else n // 2 + 1)

@@ -1,4 +1,3 @@
-import math
 import sys
 
 input = sys.stdin.readline
@@ -6,9 +5,7 @@ input = sys.stdin.readline
 for _ in range(int(input())):
     n = int(input())
     data = list(map(int, input().split()))
-
-    tmp = data[0]
+    tmp = 1
     for i in data:
-        tmp = math.gcd(i, tmp)
-
-    print(max(data) // tmp)
+        tmp *= i
+    print(((n - 1) + tmp) * 2022)
