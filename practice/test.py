@@ -1,2 +1,2 @@
-a = [1, 2, 3]
-print(*reversed(a))
+a = dict()
+b = a.values()[0]
