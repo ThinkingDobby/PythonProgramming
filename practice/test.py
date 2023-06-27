@@ -1,17 +1,27 @@
-import numpy as np
+def is_prime(n, i=2):
+    # Base cases
+    if n <= 2:
+        if n == 2:
+            return True
+        else:
+            return False
+    if n % i == 0:
+        return False
+    if i * i > n:
+        return True
 
-def f(x):
-    return -0.0056*x**3 + 0.0134*x**2 + 0.5190*x + 4.5333
+    # Recursive case
+    return is_prime(n, i + 1)
 
-a = 1
-b = 10
-n = 9
-h = (b - a) / n
 
-x = np.linspace(a, b, n + 1)
-y = f(x)
+def print_sequence(n):
+    if n > 1:
+        print_sequence(n - 1)
+        if is_prime(n):
+            print(f'{n} is a prime number.')
+        else:
+            print(f'{n} is a composite number.')
 
-# Apply Simpson's 1/3 rule
-integral = h / 3 * (y[0] + y[-1] + 4 * np.sum(y[1:-1:2]) + 2 * np.sum(y[2:-1:2]))
 
-print("The approximate value of the integral is", integral)
+num = int(input("Enter a single integer: "))
+print_sequence(num)
