@@ -1,14 +1,25 @@
-def count_iterations(a, b):
-    cnt = 0
-    while b != 0:
-        if a > b:
-            cnt += a // b
-            a %= b
-        else:
-            a, b = b, abs(a - b)
-            cnt += 1
-    return cnt
+N, T, M = map(int, input().split())
+A, B = [], []
+for _ in range(M):
+    a, b = map(int, input().split())
+    A.append(a - 1)
+    B.append(b - 1)
 
-a = int(input())
-b = int(input())
-print(count_iterations(a, b))
+
+def f(x, t, u):
+    if x == N:
+        if u != T:
+            return 0
+        ret = 1
+        for i in range(M):
+            ret &= t[A[i]] != t[B[i]]
+    else:
+        ret = 0
+        for i in range(u + 1):
+            t[x] = i
+            ret += f(x + 1, t, max(u, i + 1))
+    return ret
+
+
+print(f(0, [-1] * N, 0))
+
