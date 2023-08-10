@@ -7,4 +7,4 @@ n = int(input())
 if n <= 2:
     print(-1)
 else:
-    print(*([n] + [1] * (n - 1)))
+    print(*[i for i in range(n, 0, -1)])
