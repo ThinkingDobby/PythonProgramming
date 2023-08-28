@@ -43,7 +43,9 @@ def upper_bound(data, target, _l, _r):
 ex = [1, 1, 1, 2, 2, 2, 3, 4, 4, 4, 6, 8]
 print(binary_search(ex, 2, 0, len(ex) - 1))
 
+# target에 해당하는 가장 작은 인덱스 반환
 print(lower_bound(ex, 2, 0, len(ex) - 1))
+# target에 해당하는 가장 큰 인덱스 + 1 반환
 print(upper_bound(ex, 2, 0, len(ex) - 1))
 
 # bisect 라이브러리 이용 가능

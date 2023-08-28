@@ -11,3 +11,7 @@ def get_divisors(n):
 
     divisors.sort()
     return divisors
+
+
+n = int(input())
+print(get_divisors(n))
