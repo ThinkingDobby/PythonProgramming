@@ -8,6 +8,7 @@ target = "2023-09-21"
 # 문자열 -> datetime
 today_dt = datetime.strptime(today, "%Y-%m-%d")
 target_dt = datetime.strptime(target, "%Y-%m-%d")
+#time_dt = datetime.strptime(target_dt, "%H:%M:%S")   #시:분:초
 
 # datetime -> 문자열
 target = datetime.strftime(target_dt, "%Y-%m-%d")
