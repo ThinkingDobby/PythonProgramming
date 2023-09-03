@@ -1,7 +1,8 @@
 import sys
 from functools import lru_cache
 
-sys.setrecursionlimit(int(1e5))
+# 기본 recursion limit은 1000
+sys.setrecursionlimit(int(1e7))
 
 # lru_cache: 자동으로 함수 결과 저장
 @lru_cache()
@@ -16,7 +17,7 @@ def get_fibo(n):
 print(get_fibo(1000))
 
 # def get_fibo(cnt, a, b):
-#     if cnt == 0:
+#     if cnt <= 0:
 #         return a
 #     else:
 #         return get_fibo(cnt - 1, b, a + b)
