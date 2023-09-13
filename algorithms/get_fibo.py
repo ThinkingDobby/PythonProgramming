@@ -2,7 +2,8 @@ import sys
 from functools import lru_cache
 
 # 기본 recursion limit은 1000
-sys.setrecursionlimit(int(1e7))
+# 너무 높게 (ex: 1e7) 설정 시 메모리 오류 발생함에 주의
+sys.setrecursionlimit(int(1e5))
 
 # lru_cache: 자동으로 함수 결과 저장
 @lru_cache()
