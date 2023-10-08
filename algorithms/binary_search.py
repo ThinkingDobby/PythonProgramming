@@ -42,6 +42,7 @@ def upper_bound(data, target, _l, _r):
 
 ex = [1, 1, 1, 2, 2, 2, 3, 4, 4, 4, 6, 8]
 print(binary_search(ex, 2, 0, len(ex) - 1))
+# 찾는 값 없으면 None 반환
 
 # target에 해당하는 가장 작은 인덱스 반환
 print(lower_bound(ex, 2, 0, len(ex) - 1))
