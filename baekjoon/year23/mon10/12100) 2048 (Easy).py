@@ -5,6 +5,10 @@ import sys
 input = sys.stdin.readline
 
 
+def copy_list(data):
+    return [i[:] for i in data]
+
+
 def tilt(data, n, way):
     if way == 0:    # 좌
         for i in range(n):
@@ -73,8 +77,9 @@ def tilt(data, n, way):
             for i in range(n):
                 data[i][j] = tmp[i]
 
-        # for i in range(n):
-        #     print(data[i])
+    # for i in range(n):
+    #     print(data[i])
+    # print()
 
 
 def get_max(data):
@@ -92,7 +97,7 @@ def dfs(data, n, way, lev):
 
     mv = -1
     for i in range(4):
-        mv = max(mv, dfs(data[:], n, i, lev + 1))
+        mv = max(mv, dfs(copy_list(data), n, i, lev + 1))
     return mv
 
 
@@ -101,7 +106,7 @@ data = [list(map(int, input().split())) for _ in range(n)]
 
 mv = -1
 for i in range(4):
-    mv = max(mv, dfs(data[:], n, i, 1))
+    mv = max(mv, dfs(copy_list(data), n, i, 1))
 
 print(mv)
 
@@ -119,4 +124,12 @@ print(mv)
 8 4 0 0
 16 8 2 0
 2 8 2 0
+"""
+
+"""
+4
+0 0 0 4
+2 2 2 4
+4 2 4 8
+128 64 32 16
 """
