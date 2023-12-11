@@ -6,15 +6,8 @@ for _ in range(int(input())):
     a, b, n = map(int, input().split())
     data = sorted(map(int, input().split()))
 
-    now = b
-    ans = 0
+    now = b - 1
     for i in range(n):
-        if now + data[i] <= a:
-            now += data[i]
-        else:
-            ans += now - 1
-            now = a
+        now += min(data[i], a - 1)
 
-    ans += now
-
-    print(ans)
+    print(now + 1)
