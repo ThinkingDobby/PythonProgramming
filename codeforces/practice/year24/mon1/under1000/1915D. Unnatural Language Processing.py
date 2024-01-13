@@ -12,14 +12,11 @@ for _ in range(int(input())):
 
     i = 0
     while i < n:
-        if data[i] in consonants and i + 1 < n and data[i + 1] in vowels:
-            if i + 2 < n and data[i + 2] in consonants:
-                ans += data[i:i + 3] + '.'
-                i += 2
-            else:
-                ans += data[i:i + 2] + '.'
-                i += 1
+        if i + 3 < n - 1 and data[i + 2] in consonants and data[i + 3] in consonants:
+            ans += data[i:i + 3] + "."
+            i += 3
         else:
-            i += 1
+            ans += data[i:i + 2] + "."
+            i += 2
 
     print(ans)
