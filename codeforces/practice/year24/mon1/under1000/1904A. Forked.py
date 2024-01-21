@@ -11,14 +11,23 @@ for _ in range(int(input())):
     chk_q = set()
 
     chk_k.add((xk + a, yk + b))
-    if yk - b >= 0: chk_k.add((xk + a, yk - b))
-    if xk - a >= 0: chk_k.add((xk - a, yk + b))
-    if xk - a >= 0 and yk - b >= 0: chk_k.add((xk - a, yk - b))
+    chk_k.add((xk + a, yk - b))
+    chk_k.add((xk - a, yk + b))
+    chk_k.add((xk - a, yk - b))
+
+    chk_k.add((xk + b, yk + a))
+    chk_k.add((xk + b, yk - a))
+    chk_k.add((xk - b, yk + a))
+    chk_k.add((xk - b, yk - a))
 
     chk_q.add((xq + a, yq + b))
-    if yq - b >= 0: chk_q.add((xq + a, yq - b))
-    if xq - a >= 0: chk_q.add((xq - a, yq + b))
-    if xq - a >= 0 and yq - b >= 0: chk_q.add((xq - a, yq - b))
+    chk_q.add((xq + a, yq - b))
+    chk_q.add((xq - a, yq + b))
+    chk_q.add((xq - a, yq - b))
+
+    chk_q.add((xq + b, yq + a))
+    chk_q.add((xq + b, yq - a))
+    chk_q.add((xq - b, yq + a))
+    chk_q.add((xq - b, yq - a))
 
     print(len(chk_k & chk_q))
-    print(chk_k, chk_q)
